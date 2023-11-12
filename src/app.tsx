@@ -1,11 +1,19 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate
+} from 'react-router-dom'
 import styled from 'styled-components'
 import Container from 'react-bootstrap/Container'
 
 // * Providers
-import { CatStoreProvider } from './providers'
+import { ErrorAlertProvider, CatStoreProvider } from './providers'
 
 // * Components
 import { Header } from 'src/components'
+import HomePage from 'src/pages/home-page'
+import CatPage from 'src/pages/cat-page'
 
 const Content = styled(Container)`
   padding: 90px 10px 10px 10px;
@@ -16,9 +24,17 @@ const App = () => {
     <>
       <Header />
       <Content>
-        <CatStoreProvider>
-          <div></div>
-        </CatStoreProvider>
+        <ErrorAlertProvider>
+          <CatStoreProvider>
+            <Router>
+              <Routes>
+                <Route path='/:id' element={<CatPage />} />
+                <Route path='/' element={<HomePage />} />
+                <Route path='*' element={<Navigate to='/' replace />} />
+              </Routes>
+            </Router>
+          </CatStoreProvider>
+        </ErrorAlertProvider>
       </Content>
     </>
   )

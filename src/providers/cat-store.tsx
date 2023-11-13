@@ -6,7 +6,6 @@ import { CatStoreContext, TBreed } from 'src/contexts'
 export const CatStoreProvider = ({ children }: any) => {
   const [breeds, setBreeds] = useState<TBreed[] | null>(null)
   const [activeBreed, setActiveBreed] = useState<string | null>(null)
-  const [activeImage, setActiveImage] = useState<string | null>(null)
 
   return (
     <CatStoreContext.Provider
@@ -14,9 +13,7 @@ export const CatStoreProvider = ({ children }: any) => {
         breeds,
         setBreeds,
         activeBreed,
-        setActiveBreed,
-        activeImage,
-        setActiveImage
+        setActiveBreed
       }}
     >
       {children}

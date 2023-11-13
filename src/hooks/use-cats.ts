@@ -33,8 +33,15 @@ export const useCats = () => {
     return res
   }
 
+  const getSingleCatImage = async (imageId: string) =>
+    await requestHandler(async () => {
+      const response = await catApi.getImageById(imageId)
+      return response?.data ?? null
+    })
+
   return {
     getListOfBreeds,
-    getBreedImages
+    getBreedImages,
+    getSingleCatImage
   }
 }

@@ -18,3 +18,8 @@ export const getImages = async (
     params: { page, limit, breed_ids: breedId }
   })
 }
+
+export const getImageById = async (imageId: string) => {
+  const url = `https://api.thecatapi.com/v1/images/${imageId}`
+  return await axios.get(url, { headers })
+}

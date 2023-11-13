@@ -28,7 +28,7 @@ const App = () => {
           <CatStoreProvider>
             <Router>
               <Routes>
-                <Route path='/:id' element={<CatPage />} />
+                <Route path='/:imgId' element={<CatPage />} />
                 <Route path='/' element={<HomePage />} />
                 <Route path='*' element={<Navigate to='/' replace />} />
               </Routes>

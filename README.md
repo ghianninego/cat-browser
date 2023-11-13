@@ -2,6 +2,8 @@
 
 A simple web application that allows users to browse different Cat breeds with images and details.<br/>
 This project runs using React framework with TypeScript, Vite and React Bootstrap.
+<br/><br/>
+Created by Ghiannine Go.
 
 ## Setup
 

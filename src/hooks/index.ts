@@ -1,2 +1,2 @@
-export { useCatsApi } from './cats-api'
+export { useCats } from './use-cats'
 export { useStore } from './store'

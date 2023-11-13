@@ -10,15 +10,11 @@ export type TCatStore = {
   setBreeds: Dispatch<SetStateAction<TBreed[] | null>>
   activeBreed: string | null
   setActiveBreed: Dispatch<SetStateAction<string | null>>
-  activeImage: string | null
-  setActiveImage: Dispatch<SetStateAction<string | null>>
 }
 
 export const CatStoreContext = createContext<TCatStore>({
   breeds: null,
   setBreeds: () => {},
   activeBreed: null,
-  setActiveBreed: () => {},
-  activeImage: null,
-  setActiveImage: () => {}
+  setActiveBreed: () => {}
 })

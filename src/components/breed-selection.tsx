@@ -4,13 +4,19 @@ import Form from 'react-bootstrap/Form'
 import Placeholder from 'react-bootstrap/Placeholder'
 
 // * Hooks
-import { useCatsApi, useStore } from 'src/hooks'
+import { useCats, useStore } from 'src/hooks'
 
 // * Types
 import { type TBreed } from 'src/contexts'
 
+const LoadSkeleton = () => (
+  <Placeholder as='p' animation='wave'>
+    <Placeholder.Button xs={12} variant='secondary' />
+  </Placeholder>
+)
+
 export const BreedSelection = () => {
-  const { getListOfBreeds } = useCatsApi()
+  const { getListOfBreeds } = useCats()
   const { breeds, activeBreed, setActiveBreed } = useStore()
 
   const [searchParams] = useSearchParams()
@@ -34,9 +40,7 @@ export const BreedSelection = () => {
     <>
       <Form.Label>Breed</Form.Label>
       {breeds === null ? (
-        <Placeholder as='p' animation='wave'>
-          <Placeholder.Button xs={12} variant='secondary' />
-        </Placeholder>
+        <LoadSkeleton />
       ) : (
         <Form.Select
           aria-label='Breed'

@@ -4,7 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 
 // * Components
-import { BreedSelection, CatsList } from 'src/components'
+import { BreedSelection, BreedImages } from 'src/components'
 
 const Card = styled(Col)`
   padding: 12px;
@@ -22,7 +22,7 @@ const HomePage: React.FC = () => {
           <BreedSelection />
         </Card>
         <Card>
-          <CatsList />
+          <BreedImages />
         </Card>
       </Row>
     </Container>
